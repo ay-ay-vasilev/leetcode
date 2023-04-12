@@ -1,42 +1,57 @@
 #include <iostream> 
 #include <string>
-#include <iostream>
 #include <vector>
+#include <algorithm>
+#include <unordered_map>
 
 using namespace std;
 
-string longestPalindrome(string s) {
-	int n = s.length();
-	vector<vector<int>> matrix(n, vector<int>(n, 0));
-	for (int i = 0; i < n; i++)
+vector<vector<int>> threeSum(vector<int>& nums) {
+	sort(nums.begin(), nums.end());
+	if (nums.size() < 3)
 	{
-		matrix[i][i] = 1;
+		return {};
 	}
-	int longestSubstrLength = 1;
-	string longestSubstr(1, s[0]);
-	for (int i = n - 1; i >= 0; i--)
+	if (nums[0] > 0)
 	{
-		for (int j = i + 1; j < n; j++)
+		return {};
+	}
+	vector<vector<int>> result;
+	unordered_map<int, int> map;
+	for (int i = 0; i < nums.size(); ++i)
+	{
+		map[nums[i]] = i;
+	}
+
+	for (int i = 0; i < nums.size() - 2; ++i)
+	{
+		for (int j = i + 1; j < nums.size() - 1; ++j)
 		{
-			if (s[i] == s[j])
-			{
-				if (matrix[i + 1][j - 1] != 0 || j - i == 1)
-				{
-					matrix[i][j] = 1;
-					if (longestSubstrLength < j - i + 1)
-					{
-						longestSubstrLength = j - i + 1;
-						longestSubstr = s.substr(i, longestSubstrLength);
-					}
-				}
-			}
+			int third = -(nums[i] + nums[j]);
+			if (map.count(third) && map.find(third)->second > j)
+				result.push_back({ nums[i], nums[j], third });
+			j = map.find(nums[j])->second;
 		}
+		i = map.find(nums[i])->second;
 	}
-	return longestSubstr;
+	return result;
 }
 
-int main() {
-	const auto result = longestPalindrome("aacabdkacaa");
-	cout << result << "\n";
+
+int main()
+{
+	vector<int> test = { -1, 0, 1, 2, -1, -4 };
+	const auto results = threeSum(test);
+	cout << "[ ";
+		for (const auto& triplet : results)
+		{
+			cout << "[";
+			for (const auto& num : triplet)
+			{
+				cout << num << " ";
+			}
+			cout << "]" << " ";
+		}
+	cout << "]" << "\n";
 	return 0;
 }

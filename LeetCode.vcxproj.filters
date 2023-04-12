@@ -27,5 +27,8 @@
     <ClCompile Include="5_Longest_Palindromic_Substring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="11_Container_With_Most_Water.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
