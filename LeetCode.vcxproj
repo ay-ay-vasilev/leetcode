@@ -128,7 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="11_Container_With_Most_Water.cpp" />
+    <ClCompile Include="15_3Sum.cpp" />
+    <ClCompile Include="19_Remove_Nth_Node_From_End_of_List.cpp" />
     <ClCompile Include="1_Two_Sum.cpp" />
+    <ClCompile Include="20_Valid_Parenthesis.cpp" />
     <ClCompile Include="3_Longest_Substring_Without_Repeating_Characters.cpp" />
     <ClCompile Include="5_Longest_Palindromic_Substring.cpp" />
     <ClCompile Include="LeetCode.cpp" />
