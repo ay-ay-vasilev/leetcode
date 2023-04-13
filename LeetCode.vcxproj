@@ -132,6 +132,7 @@
     <ClCompile Include="19_Remove_Nth_Node_From_End_of_List.cpp" />
     <ClCompile Include="1_Two_Sum.cpp" />
     <ClCompile Include="20_Valid_Parenthesis.cpp" />
+    <ClCompile Include="21_Merge_Two_Sorted_Lists.cpp" />
     <ClCompile Include="3_Longest_Substring_Without_Repeating_Characters.cpp" />
     <ClCompile Include="5_Longest_Palindromic_Substring.cpp" />
     <ClCompile Include="LeetCode.cpp" />
