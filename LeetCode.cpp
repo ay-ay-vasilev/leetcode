@@ -1,57 +1,118 @@
-#include <iostream> 
-#include <string>
 #include <vector>
-#include <algorithm>
-#include <unordered_map>
+#include <limits>
 
 using namespace std;
 
-vector<vector<int>> threeSum(vector<int>& nums) {
-	sort(nums.begin(), nums.end());
-	if (nums.size() < 3)
-	{
-		return {};
-	}
-	if (nums[0] > 0)
-	{
-		return {};
-	}
-	vector<vector<int>> result;
-	unordered_map<int, int> map;
-	for (int i = 0; i < nums.size(); ++i)
-	{
-		map[nums[i]] = i;
-	}
+struct ListNode
+{
+	int val;
+	ListNode* next;
+	ListNode() : val(0), next(nullptr) {}
+	ListNode(int x) : val(x), next(nullptr) {}
+	ListNode(int x, ListNode* next) : val(x), next(next) {}
+};
 
-	for (int i = 0; i < nums.size() - 2; ++i)
+ListNode* mergeKLists(vector<ListNode*>& lists) {
+	if (lists.size() == 0) return nullptr;
+
+	bool allNull = true;
+	for (const auto& list : lists)
 	{
-		for (int j = i + 1; j < nums.size() - 1; ++j)
+		if (!list)
+			continue;
+		allNull = false;
+		break;
+	}
+	if (allNull) return nullptr;
+
+	ListNode* head = new ListNode();
+	ListNode* result = head;
+	vector<int> nonNullLists;
+
+	while (true)
+	{
+		nonNullLists.clear();
+		for (int i = 0; i < lists.size(); i++)
+			if (lists[i]) nonNullLists.push_back(i);
+
+		if (nonNullLists.empty())
+			break;
+
+		int minVal = INT_MAX;
+		int minIndex = 0;
+		for (const auto& listIndex : nonNullLists)
 		{
-			int third = -(nums[i] + nums[j]);
-			if (map.count(third) && map.find(third)->second > j)
-				result.push_back({ nums[i], nums[j], third });
-			j = map.find(nums[j])->second;
+			if (lists[listIndex]->val < minVal)
+			{
+				minVal = lists[listIndex]->val;
+				minIndex = listIndex;
+			}
 		}
-		i = map.find(nums[i])->second;
-	}
-	return result;
-}
+		result->val = minVal;
+		lists[minIndex] = lists[minIndex]->next;
 
+		if (nonNullLists.size() == 1 && lists[minIndex] == nullptr)
+		{
+			break;
+		}
+		result->next = new ListNode();
+		result = result->next;
+
+	}
+	return head;
+}
 
 int main()
 {
-	vector<int> test = { -1, 0, 1, 2, -1, -4 };
-	const auto results = threeSum(test);
-	cout << "[ ";
-		for (const auto& triplet : results)
+	vector<ListNode*> lists;
+
+	vector<int> list0 = { 1, 4, 5 };
+	vector<int> list1 = { 1, 3, 4 };
+	vector<int> list2 = { 2, 6 };
+	ListNode* head;
+	ListNode* result;
+
+	head = new ListNode();
+	result = head;
+	for (int i = 0; i < list0.size(); i++)
+	{
+		result->val = list0[i];
+		if (i != list0.size() - 1)
 		{
-			cout << "[";
-			for (const auto& num : triplet)
-			{
-				cout << num << " ";
-			}
-			cout << "]" << " ";
+			result->next = new ListNode();
+			result = result->next;
 		}
-	cout << "]" << "\n";
+	}
+	lists.push_back(head);
+
+	head = new ListNode();
+	result = head;
+	for (int i = 0; i < list1.size(); i++)
+	{
+		result->val = list1[i];
+		if (i != list1.size() - 1)
+		{
+			result->next = new ListNode();
+			result = result->next;
+		}
+	}
+	lists.push_back(head);
+
+	head = new ListNode();
+	result = head;
+	for (int i = 0; i < list2.size(); i++)
+	{
+		result->val = list2[i];
+		if (i != list2.size() - 1)
+		{
+			result->next = new ListNode();
+			result = result->next;
+		}
+	}
+	lists.push_back(head);
+
+
+	const auto test = mergeKLists(lists);
+
 	return 0;
 }
