@@ -1,118 +1,51 @@
 #include <vector>
 #include <limits>
+#include <iostream>
 
 using namespace std;
 
-struct ListNode
-{
-	int val;
-	ListNode* next;
-	ListNode() : val(0), next(nullptr) {}
-	ListNode(int x) : val(x), next(nullptr) {}
-	ListNode(int x, ListNode* next) : val(x), next(next) {}
-};
+int search(vector<int>& nums, int target) {
+	int left = 0;
+	int right = nums.size() - 1;
+	int mid = 0;
 
-ListNode* mergeKLists(vector<ListNode*>& lists) {
-	if (lists.size() == 0) return nullptr;
 
-	bool allNull = true;
-	for (const auto& list : lists)
+	while (left < right)
 	{
-		if (!list)
-			continue;
-		allNull = false;
-		break;
-	}
-	if (allNull) return nullptr;
+		mid = (left + right) / 2;
 
-	ListNode* head = new ListNode();
-	ListNode* result = head;
-	vector<int> nonNullLists;
+		if (nums[left] == target) return left;
+		if (nums[right] == target) return right;
+		if (nums[mid] == target) return mid;
 
-	while (true)
-	{
-		nonNullLists.clear();
-		for (int i = 0; i < lists.size(); i++)
-			if (lists[i]) nonNullLists.push_back(i);
-
-		if (nonNullLists.empty())
-			break;
-
-		int minVal = INT_MAX;
-		int minIndex = 0;
-		for (const auto& listIndex : nonNullLists)
+		if (nums[mid] > nums[right])
 		{
-			if (lists[listIndex]->val < minVal)
-			{
-				minVal = lists[listIndex]->val;
-				minIndex = listIndex;
-			}
+			if (target < nums[left] || target > nums[mid]) left = mid + 1;
+			else right = mid - 1;
 		}
-		result->val = minVal;
-		lists[minIndex] = lists[minIndex]->next;
-
-		if (nonNullLists.size() == 1 && lists[minIndex] == nullptr)
+		else if (nums[left] > nums[mid])
 		{
-			break;
+			if (target > nums[right] || target < nums[mid]) right = mid - 1;
+			else left = mid + 1;
 		}
-		result->next = new ListNode();
-		result = result->next;
-
+		else
+		{
+			if (target < nums[mid]) right = mid - 1;
+			else left = mid + 1;
+		}
 	}
-	return head;
+
+	if (left > 0 && left < nums.size() && nums[left] == target) return left;
+	if (right > 0 && right < nums.size() && nums[right] == target) return right;
+	if (left == right && nums[left] == target) return left;
+	return -1;
 }
 
 int main()
 {
-	vector<ListNode*> lists;
-
-	vector<int> list0 = { 1, 4, 5 };
-	vector<int> list1 = { 1, 3, 4 };
-	vector<int> list2 = { 2, 6 };
-	ListNode* head;
-	ListNode* result;
-
-	head = new ListNode();
-	result = head;
-	for (int i = 0; i < list0.size(); i++)
-	{
-		result->val = list0[i];
-		if (i != list0.size() - 1)
-		{
-			result->next = new ListNode();
-			result = result->next;
-		}
-	}
-	lists.push_back(head);
-
-	head = new ListNode();
-	result = head;
-	for (int i = 0; i < list1.size(); i++)
-	{
-		result->val = list1[i];
-		if (i != list1.size() - 1)
-		{
-			result->next = new ListNode();
-			result = result->next;
-		}
-	}
-	lists.push_back(head);
-
-	head = new ListNode();
-	result = head;
-	for (int i = 0; i < list2.size(); i++)
-	{
-		result->val = list2[i];
-		if (i != list2.size() - 1)
-		{
-			result->next = new ListNode();
-			result = result->next;
-		}
-	}
-	lists.push_back(head);
-
-
-	const auto test = mergeKLists(lists);
-
+	vector<int> vec{ 1 };
+	int target = 1;
+	const auto result = search(vec, target);
+	cout << result;
 	return 0;
 }
