@@ -1,9 +1,7 @@
 #include <vector>
-#include <memory>
-#include <iostream>
 #include <string>
-#include <algorithm>
 #include <unordered_map>
+#include <algorithm>
 
 using namespace std;
 
@@ -28,19 +26,3 @@ public:
 		return result;
 	}
 };
-
-int main()
-{
-	const auto solution = make_unique<Solution>();
-	vector<string> vec{ "eat","tea","tan","ate","nat","bat" };
-	const auto result = solution->groupAnagrams(vec);
-
-	for (const auto& vec : result)
-	{
-		for (const auto& el : vec)
-			cout << el << " ";
-		cout << "\n";
-	}
-
-	return 0;
-}
