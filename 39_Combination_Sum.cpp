@@ -1,6 +1,4 @@
 #include <vector>
-#include <memory>
-#include <iostream>
 
 using namespace std;
 
@@ -36,22 +34,3 @@ public:
 		return result;
 	}
 };
-
-int main()
-{
-	const auto solution = make_unique<Solution>();
-	vector<int> vec{ 2, 3, 5 };
-	int target = 8;
-	const auto result = solution->combinationSum(vec, target);
-	
-	for (const auto vec : result)
-	{
-		for (const auto num : vec)
-		{
-			cout << num << " ";
-		}
-		cout << "\n";
-	}
-
-	return 0;
-}
