@@ -1,9 +1,4 @@
 #include <vector>
-#include <memory>
-#include <iostream>
-#include <string>
-#include <algorithm>
-#include <unordered_map>
 
 using namespace std;
 
@@ -41,24 +36,10 @@ public:
 			if (result.size() == numOfElements) return result;
 			while (i - 1 >= l + 1) { result.push_back(matrix[--i][j]); }
 			i++;
-			
+
 			l++;
 		}
 
 		return result;
 	}
 };
-
-int main()
-{
-	const auto solution = make_unique<Solution>();
-	vector<vector<int>> vec{ {2, 3} };
-	const auto result = solution->spiralOrder(vec);
-
-	for (const auto& val : result)
-	{
-		cout << val << " ";
-	}
-
-	return 0;
-}
