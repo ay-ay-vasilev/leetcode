@@ -1,9 +1,4 @@
 #include <vector>
-#include <memory>
-#include <iostream>
-#include <string>
-#include <algorithm>
-#include <unordered_map>
 
 using namespace std;
 
@@ -33,14 +28,3 @@ public:
 		return maxSum;
 	}
 };
-
-int main()
-{
-	const auto solution = make_unique<Solution>();
-	vector<int> vec{ -2, 1, -3, 4, -1, 2, 1, -5, 4 };
-	const auto result = solution->maxSubArray(vec);
-
-	cout << result << "\n";
-
-	return 0;
-}

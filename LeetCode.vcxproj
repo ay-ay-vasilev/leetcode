@@ -139,6 +139,7 @@
     <ClCompile Include="3_Longest_Substring_Without_Repeating_Characters.cpp" />
     <ClCompile Include="48_Rotate_Image.cpp" />
     <ClCompile Include="49_Group_Anagrams.cpp" />
+    <ClCompile Include="53_Maximum_Subarray.cpp" />
     <ClCompile Include="5_Longest_Palindromic_Substring.cpp" />
     <ClCompile Include="LeetCode.cpp" />
   </ItemGroup>
