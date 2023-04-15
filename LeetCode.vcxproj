@@ -141,6 +141,7 @@
     <ClCompile Include="49_Group_Anagrams.cpp" />
     <ClCompile Include="53_Maximum_Subarray.cpp" />
     <ClCompile Include="54_Spiral_Matrix.cpp" />
+    <ClCompile Include="55_Jump_Game.cpp" />
     <ClCompile Include="5_Longest_Palindromic_Substring.cpp" />
     <ClCompile Include="LeetCode.cpp" />
   </ItemGroup>

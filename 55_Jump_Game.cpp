@@ -1,9 +1,4 @@
 #include <vector>
-#include <memory>
-#include <iostream>
-#include <string>
-#include <algorithm>
-#include <unordered_map>
 
 using namespace std;
 
@@ -31,14 +26,3 @@ public:
 		return jumps[n - 1];
 	}
 };
-
-int main()
-{
-	const auto solution = make_unique<Solution>();
-	vector<int> vec{ 0, 2, 3 };
-	const auto result = solution->canJump(vec);
-
-	cout << result;
-
-	return 0;
-}
