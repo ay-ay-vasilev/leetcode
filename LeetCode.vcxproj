@@ -146,6 +146,7 @@
     <ClCompile Include="57_Insert_Interval.cpp" />
     <ClCompile Include="5_Longest_Palindromic_Substring.cpp" />
     <ClCompile Include="62_Unique_Paths.cpp" />
+    <ClCompile Include="71_Climbing_Stairs.cpp" />
     <ClCompile Include="LeetCode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

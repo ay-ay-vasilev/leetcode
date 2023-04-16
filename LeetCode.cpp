@@ -9,28 +9,24 @@ using namespace std;
 
 class Solution {
 public:
-	int uniquePaths(int m, int n) {
-		vector<vector<int>> matrix(m, vector<int>(n, 0));
+	int climbStairs(int n) {
+		if (n == 2) return 2;
+		if (n == 1) return 1;
 
-		matrix[0] = vector<int>(n, 1);
-		for (int i = 1; i < m; ++i) matrix[i][0] = 1;
-
-		int sum = 0;
-		for (int i = 1; i < m; ++i)
+		vector<int> fib (n, 1);
+		fib[1] = 2;
+		for (int i = 2; i < n; ++i)
 		{
-			for (int j = 1; j < n; ++j)
-			{
-				matrix[i][j] += matrix[i - 1][j] + matrix[i][j - 1];
-			}
+			fib[i] = fib[i - 1] + fib[i - 2];
 		}
-		return matrix[m - 1][n - 1];
+		return fib[n - 1];
 	}
 };
 
 int main()
 {
 	const auto solution = make_unique<Solution>();
-	const auto result = solution->uniquePaths(3, 7);
+	const auto result = solution->climbStairs(45);
 
 	cout << result;
 
