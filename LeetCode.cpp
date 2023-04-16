@@ -9,36 +9,34 @@ using namespace std;
 
 class Solution {
 public:
-	bool canJump(vector<int>& nums) {
-		int n = nums.size();
-		vector<bool> jumps(n, false);
-		jumps[0] = 1;
-
-		for (int i = 0; i < nums.size(); ++i)
+	vector<vector<int>> merge(vector<vector<int>>& intervals) {
+		int n = intervals.size();
+		if (n == 0) return {};
+		vector<vector<int>> result;
+		sort(intervals.begin(), intervals.end(), [](const vector<int>& a, const vector<int>& b) {return a[0] < b[0]; });
+		result.push_back(intervals[0]);
+		for (int i = 1; i < n; ++i)
 		{
-			if (jumps[i] == false) break;
-			if (nums[i] == 0)
-			{
-				continue;
-			}
-			for (int j = i + 1; j < nums.size() && j - i <= nums[i]; ++j)
-			{
-				if (j == n - 1) return true;
-				jumps[j] = true;
-			}
+			if (intervals[i][0] > result.back()[1]) result.push_back(intervals[i]);
+			else result.back()[1] = max(intervals[i][1], result.back()[1]);
 		}
-
-		return jumps[n - 1];
+		return result;
 	}
 };
 
 int main()
 {
 	const auto solution = make_unique<Solution>();
-	vector<int> vec{ 0, 2, 3 };
-	const auto result = solution->canJump(vec);
+	vector<vector<int>> vec{ };
+	const auto result = solution->merge(vec);
 
-	cout << result;
+	for (const auto& vector : result)
+	{
+		for (const auto& el : vector)
+		{
+			cout << el << " ";
+		}
+	}
 
 	return 0;
 }
