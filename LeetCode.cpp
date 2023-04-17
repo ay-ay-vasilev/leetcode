@@ -1,9 +1,4 @@
-#include <vector>
-#include <memory>
-#include <iostream>
-#include <string>
-#include <algorithm>
-#include <unordered_map>
+#include "stdc++.h"
 
 using namespace std;
 
