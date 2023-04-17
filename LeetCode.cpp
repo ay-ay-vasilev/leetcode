@@ -4,24 +4,29 @@ using namespace std;
 
 class Solution {
 public:
-	int climbStairs(int n) {
-		if (n == 2) return 2;
-		if (n == 1) return 1;
+	string minWindow(string s, string t) {
+		unordered_map<char, int> windowHashTable;
+		int left = 0, count = 0, minSubsLeft = 0, minSubsLen = INT_MAX;
+		for (const auto& l : t) { ++windowHashTable[l]; }
+		bool isWindowHashTableBigger = false;
 
-		vector<int> fib (n, 1);
-		fib[1] = 2;
-		for (int i = 2; i < n; ++i)
+		for (int right = 0; right < s.length(); ++right)
 		{
-			fib[i] = fib[i - 1] + fib[i - 2];
+			if (windowHashTable[s[right]]-- > 0) count++;
+			if (count == t.length())
+			{
+				while (left < right && windowHashTable[s[left]] < 0) { ++windowHashTable[s[left++]]; }
+				if (right - left + 1 < minSubsLen) { minSubsLen = right - left + 1; minSubsLeft = left; }
+			}
 		}
-		return fib[n - 1];
+		return minSubsLen == INT_MAX ? "" : s.substr(minSubsLeft, minSubsLen);
 	}
 };
 
 int main()
 {
 	const auto solution = make_unique<Solution>();
-	const auto result = solution->climbStairs(45);
+	const auto result = solution->minWindow("cabwefgewcwaefgcf", "cae");
 
 	cout << result;
 

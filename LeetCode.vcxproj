@@ -149,6 +149,7 @@
     <ClCompile Include="62_Unique_Paths.cpp" />
     <ClCompile Include="71_Climbing_Stairs.cpp" />
     <ClCompile Include="73_Set_Matrix_Zeroes.cpp" />
+    <ClCompile Include="76_Minimal_Window_Substring.cpp" />
     <ClCompile Include="LeetCode.cpp" />
   </ItemGroup>
   <ItemGroup>
