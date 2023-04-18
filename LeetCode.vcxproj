@@ -134,6 +134,7 @@
     <ClCompile Include="1_Two_Sum.cpp" />
     <ClCompile Include="20_Valid_Parenthesis.cpp" />
     <ClCompile Include="21_Merge_Two_Sorted_Lists.cpp" />
+    <ClCompile Include="232_Implement_Queue_using_Stacks.cpp" />
     <ClCompile Include="23_Merge_k_Sorted_Lists.cpp" />
     <ClCompile Include="33_Search_in_Rotated_Sorted_Array.cpp" />
     <ClCompile Include="39_Combination_Sum.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="71_Climbing_Stairs.cpp" />
     <ClCompile Include="73_Set_Matrix_Zeroes.cpp" />
     <ClCompile Include="76_Minimal_Window_Substring.cpp" />
+    <ClCompile Include="933_Number_of_Recent_Calls.cpp" />
     <ClCompile Include="LeetCode.cpp" />
   </ItemGroup>
   <ItemGroup>

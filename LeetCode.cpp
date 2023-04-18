@@ -4,29 +4,65 @@ using namespace std;
 
 class Solution {
 public:
-	string minWindow(string s, string t) {
-		unordered_map<char, int> windowHashTable;
-		int left = 0, count = 0, minSubsLeft = 0, minSubsLen = INT_MAX;
-		for (const auto& l : t) { ++windowHashTable[l]; }
-		bool isWindowHashTableBigger = false;
+	vector<vector<char>> matrix;
+	string targetWord = "";
+	int n, m;
 
-		for (int right = 0; right < s.length(); ++right)
-		{
-			if (windowHashTable[s[right]]-- > 0) count++;
-			if (count == t.length())
-			{
-				while (left < right && windowHashTable[s[left]] < 0) { ++windowHashTable[s[left++]]; }
-				if (right - left + 1 < minSubsLen) { minSubsLen = right - left + 1; minSubsLeft = left; }
-			}
-		}
-		return minSubsLen == INT_MAX ? "" : s.substr(minSubsLeft, minSubsLen);
+	bool solve(int i, int j, int letterNum, vector<vector<int>> visits)
+	{
+		if (letterNum == targetWord.size())
+			return true;
+
+		if (i < 0 || i >= n || j < 0 || j >= m)
+			return false;
+
+
+		if (matrix[i][j] != targetWord[letterNum] || visits[i][j])
+			return false;
+
+		letterNum++;
+		char temp = matrix[i][j];
+		matrix[i][j] = '*';
+		visits[i][j] = 1;
+
+		bool result = solve(i - 1, j, letterNum, visits) || solve(i + 1, j, letterNum, visits) || solve(i, j - 1, letterNum, visits) || solve(i, j + 1, letterNum, visits);
+		matrix[i][j] = temp;
+		return result;
+
+	}
+
+	bool exist(vector<vector<char>>& board, string word)
+	{
+		n = board.size();
+		m = board[0].size();
+		targetWord = word;
+		matrix = board;
+
+		vector<vector<int>> visits(n, vector<int>(m, 0));
+
+		for (int i = 0; i < n; ++i)
+			for (int j = 0; j < m; ++j)
+				if (solve(i, j, 0, visits)) return true;
+		return false;
 	}
 };
 
 int main()
 {
 	const auto solution = make_unique<Solution>();
-	const auto result = solution->minWindow("cabwefgewcwaefgcf", "cae");
+
+	vector<vector<char>> board
+	{
+		{'A', 'A', 'A', 'A', 'A', 'A'},
+		{'A', 'A', 'A', 'A', 'A', 'A'},
+		{'A', 'A', 'A', 'A', 'A', 'A'},
+		{'A', 'A', 'A', 'A', 'A', 'A'},
+		{'A', 'A', 'A', 'A', 'A', 'B'},
+		{'A', 'A', 'A', 'A', 'B', 'A'}
+	};
+	string target = "AAAAAAAAAAAAABB";
+
+	const auto result = solution->exist(board, target);
 
 	cout << result;
 
