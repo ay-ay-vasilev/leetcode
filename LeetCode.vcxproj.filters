@@ -96,6 +96,9 @@
     <ClCompile Include="79_Word_Search.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="91_Decode_Ways.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bits\stdc++.h">
