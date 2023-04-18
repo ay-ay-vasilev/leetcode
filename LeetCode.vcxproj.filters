@@ -93,6 +93,9 @@
     <ClCompile Include="933_Number_of_Recent_Calls.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="79_Word_Search.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bits\stdc++.h">

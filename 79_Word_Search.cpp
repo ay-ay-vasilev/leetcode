@@ -43,25 +43,3 @@ public:
 		return false;
 	}
 };
-
-int main()
-{
-	const auto solution = make_unique<Solution>();
-
-	vector<vector<char>> board
-	{
-		{'A', 'A', 'A', 'A', 'A', 'A'},
-		{'A', 'A', 'A', 'A', 'A', 'A'},
-		{'A', 'A', 'A', 'A', 'A', 'A'},
-		{'A', 'A', 'A', 'A', 'A', 'A'},
-		{'A', 'A', 'A', 'A', 'A', 'B'},
-		{'A', 'A', 'A', 'A', 'B', 'A'}
-	};
-	string target = "AAAAAAAAAAAAABB";
-
-	const auto result = solution->exist(board, target);
-
-	cout << result;
-
-	return 0;
-}

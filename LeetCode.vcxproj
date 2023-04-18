@@ -151,6 +151,7 @@
     <ClCompile Include="71_Climbing_Stairs.cpp" />
     <ClCompile Include="73_Set_Matrix_Zeroes.cpp" />
     <ClCompile Include="76_Minimal_Window_Substring.cpp" />
+    <ClCompile Include="79_Word_Search.cpp" />
     <ClCompile Include="933_Number_of_Recent_Calls.cpp" />
     <ClCompile Include="LeetCode.cpp" />
   </ItemGroup>
