@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="100_Same_Tree.cpp" />
     <ClCompile Include="11_Container_With_Most_Water.cpp" />
     <ClCompile Include="15_3Sum.cpp" />
     <ClCompile Include="19_Remove_Nth_Node_From_End_of_List.cpp" />
