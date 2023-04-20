@@ -155,6 +155,7 @@
     <ClCompile Include="79_Word_Search.cpp" />
     <ClCompile Include="91_Decode_Ways.cpp" />
     <ClCompile Include="933_Number_of_Recent_Calls.cpp" />
+    <ClCompile Include="98_Validate_Binary_Search_Tree.cpp" />
     <ClCompile Include="LeetCode.cpp" />
   </ItemGroup>
   <ItemGroup>

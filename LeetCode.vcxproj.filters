@@ -102,6 +102,9 @@
     <ClCompile Include="704_Binary_Search.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="98_Validate_Binary_Search_Tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bits\stdc++.h">
