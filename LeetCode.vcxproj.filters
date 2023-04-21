@@ -111,6 +111,9 @@
     <ClCompile Include="102_Binary_Tree_Level_Order_Traversal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="104_Maximum_Depth_of_Binary_Tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bits\stdc++.h">
