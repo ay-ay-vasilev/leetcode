@@ -134,6 +134,7 @@
     <ClCompile Include="105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal.cpp" />
     <ClCompile Include="11_Container_With_Most_Water.cpp" />
     <ClCompile Include="121_Best_Time_to_Buy_and_Sell_Stock.cpp" />
+    <ClCompile Include="125_Valid_Palindrome.cpp" />
     <ClCompile Include="15_3Sum.cpp" />
     <ClCompile Include="19_Remove_Nth_Node_From_End_of_List.cpp" />
     <ClCompile Include="1_Two_Sum.cpp" />
