@@ -126,6 +126,9 @@
     <ClCompile Include="128_Longest_Consecutive_Sequence.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="141_Linked_List_Cycle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bits\stdc++.h">
