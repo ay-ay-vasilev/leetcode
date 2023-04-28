@@ -132,6 +132,9 @@
     <ClCompile Include="152_Maximum_Product_Subarray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="190_Reverse_Bits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bits\stdc++.h">

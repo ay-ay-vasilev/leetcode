@@ -139,6 +139,7 @@
     <ClCompile Include="141_Linked_List_Cycle.cpp" />
     <ClCompile Include="152_Maximum_Product_Subarray.cpp" />
     <ClCompile Include="15_3Sum.cpp" />
+    <ClCompile Include="190_Reverse_Bits.cpp" />
     <ClCompile Include="19_Remove_Nth_Node_From_End_of_List.cpp" />
     <ClCompile Include="1_Two_Sum.cpp" />
     <ClCompile Include="20_Valid_Parenthesis.cpp" />
