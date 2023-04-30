@@ -25,17 +25,3 @@ public:
 		return dp[n];
 	}
 };
-
-int main()
-{
-	const auto solution = make_unique<Solution>();
-
-	string s = "leetcode";
-	vector<string> wordDict { "leet", "code" };
-	
-	bool result = solution->wordBreak(s, wordDict);
-
-	cout << result;
-
-	return 0;
-}
