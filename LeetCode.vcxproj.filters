@@ -147,6 +147,9 @@
     <ClCompile Include="143_Reorder_List.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="153_Find_Minimum_in_Rotated_Sorted_Array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bits\stdc++.h">
