@@ -172,6 +172,7 @@
     <ClCompile Include="98_Validate_Binary_Search_Tree.cpp" />
     <ClCompile Include="LeetCode.cpp" />
     <ClCompile Include="124_Binary_Tree_Maximum_Path_Sum.cpp" />
+    <ClCompile Include="191_Number_of_1_Bits.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bits\stdc++.h" />
