@@ -144,6 +144,7 @@
     <ClCompile Include="153_Find_Minimum_in_Rotated_Sorted_Array.cpp" />
     <ClCompile Include="15_3Sum.cpp" />
     <ClCompile Include="190_Reverse_Bits.cpp" />
+    <ClCompile Include="198_House_Robber.cpp" />
     <ClCompile Include="19_Remove_Nth_Node_From_End_of_List.cpp" />
     <ClCompile Include="1_Two_Sum.cpp" />
     <ClCompile Include="20_Valid_Parenthesis.cpp" />
