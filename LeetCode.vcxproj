@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -147,6 +147,7 @@
     <ClCompile Include="198_House_Robber.cpp" />
     <ClCompile Include="19_Remove_Nth_Node_From_End_of_List.cpp" />
     <ClCompile Include="1_Two_Sum.cpp" />
+    <ClCompile Include="200_Number_of_Islands.cpp" />
     <ClCompile Include="20_Valid_Parenthesis.cpp" />
     <ClCompile Include="21_Merge_Two_Sorted_Lists.cpp" />
     <ClCompile Include="232_Implement_Queue_using_Stacks.cpp" />
