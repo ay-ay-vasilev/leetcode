@@ -162,6 +162,9 @@
     <ClCompile Include="206_Reverse_Linked_List.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="207_Course_Schedule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bits\stdc++.h">
