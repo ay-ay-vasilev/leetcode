@@ -35,7 +35,6 @@
 #include <cctype>
 #include <cerrno>
 #include <cfloat>
-#include <ciso646>
 #include <climits>
 #include <clocale>
 #include <cmath>

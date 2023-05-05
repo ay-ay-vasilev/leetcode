@@ -4,25 +4,29 @@ using namespace std;
 
 class Solution {
 public:
-	bool wordBreak(string s, vector<string>& wordDict) {
-		const auto n = s.length();
-		unordered_set<string> dictSet(wordDict.begin(), wordDict.end());
-		vector<bool> dp(n + 1);
-		dp[0] = true;
+	int findMinPath(int s, int end, vector<vector<int>> adj)
+	{
+		int n = adj.size();
+		vector<int> dist(n, n);
+		dist[s] = 0;
+		queue<int> q;
+		q.push(s);
 
-		for (int i = 1; i <= n; ++i)
+		while (!q.empty())
 		{
-			for (int j = 0; j < i; ++j)
+			int cur = q.front();
+			q.pop();
+
+			for (const auto& neigh : adj[cur])
 			{
-				if (dp[j] && dictSet.count(s.substr(j, i - j)))
+				if (dist[neigh] > dist[cur] + 1)
 				{
-					dp[i] = true;
-					break;
+					dist[neigh] = dist[cur] + 1;
+					q.push(neigh);
 				}
 			}
 		}
-
-		return dp[n];
+		return dist[end];
 	}
 };
 
@@ -30,10 +34,11 @@ int main()
 {
 	const auto solution = make_unique<Solution>();
 
-	string s = "leetcode";
-	vector<string> wordDict { "leet", "code" };
-	
-	bool result = solution->wordBreak(s, wordDict);
+	vector<vector<int>> adj = { {1}, {0, 3}, {3, 4}, {1, 2}, {2} };
+	int s = 0;
+	int e = 4;
+
+	int result = solution->findMinPath(s, e, adj);
 
 	cout << result;
 
