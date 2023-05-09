@@ -138,6 +138,7 @@
     <ClCompile Include="125_Valid_Palindrome.cpp" />
     <ClCompile Include="128_Longest_Consecutive_Sequence.cpp" />
     <ClCompile Include="133_Clone_Graph.cpp" />
+    <ClCompile Include="136_Single_Number.cpp" />
     <ClCompile Include="139_Word_Break.cpp" />
     <ClCompile Include="141_Linked_List_Cycle.cpp" />
     <ClCompile Include="143_Reorder_List.cpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="20_Valid_Parenthesis.cpp" />
     <ClCompile Include="211_Design_Add_and_Search_Words_Data_Structure.cpp" />
     <ClCompile Include="213_House_Robber_II.cpp" />
+    <ClCompile Include="217_Contains_Duplicate.cpp" />
     <ClCompile Include="21_Merge_Two_Sorted_Lists.cpp" />
     <ClCompile Include="232_Implement_Queue_using_Stacks.cpp" />
     <ClCompile Include="23_Merge_k_Sorted_Lists.cpp" />
